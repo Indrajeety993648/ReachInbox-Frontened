@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import InboxView from "./InboxView";
 import MainContainer from "./MainContainer";
+import RightSection from "./RightSection";
 
 function MainPage() {
 	const [datas, setData] = useState([]);
@@ -33,6 +34,9 @@ function MainPage() {
 		return () => clearInterval(interval);
 	}, []);
 
+	const loadMail = (threadId) => {
+		setSelectedThread(threadId);
+	};
 
 	// if (loading) {
 	// 	return (
@@ -41,6 +45,16 @@ function MainPage() {
 	// 		</div>
 	// 	);
 	// }
+	if (loading) {
+		return (
+			<div className="bg-[#ECEFF3] dark:bg-black dark:text-white text-[#5B5F66] flex h-screen w-full justify-center items-center">
+				<div className="flex flex-col items-center">
+					<div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500 mb-4"></div>
+					<div>Loading...</div>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div className="bg-[#ECEFF3] dark:bg-black text-white pt-16 flex w-full h-screen">
