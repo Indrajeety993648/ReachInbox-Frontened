@@ -30,8 +30,8 @@ function SideBar({ onMenuItemClick }) {
                     }`}
                     onClick={() => handleMenuItemClick("/")}
                 >
-                    {/* <RiHome5Fill className={`transition-colors duration-200 ${selectedItem === "/" ? "text-white" : "text-[#AEAEAE] hover:text-gray-500"}`} />
-                </div> */}
+                    <RiHome5Fill className={`transition-colors duration-200 ${selectedItem === "/" ? "text-white" : "text-[#AEAEAE] hover:text-gray-500"}`} />
+                </div>
                 <div
                     className={`cursor-pointer p-1 rounded-lg transition-colors duration-200 ${
                         selectedItem === "/search" ? "bg-gray-600" : "hover:bg-gray-700"
