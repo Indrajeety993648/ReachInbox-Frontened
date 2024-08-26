@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import CustomMail from "./CustomMail";
 import { MdOutlineExpand } from "react-icons/md";
 import { FaReply } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
 import { GoDotFill } from "react-icons/go";
+import DeletePopUp from "./DeletePopUp";
 
 const MainContainer = ({ selectedThread }) => {
 	const [showPopUp, setShowPopUp] = useState(false);
@@ -31,6 +33,25 @@ const MainContainer = ({ selectedThread }) => {
 		}
 	};
 
+	useEffect(() => {
+		const handleKeyPress = (event) => {
+			if (event.key === "d" || event.key === "D") {
+				setShowDelete(!showDelete);
+				console.log("Pressed D");
+			}
+
+			if (event.key === "r" || event.key === "R") {
+				setShowPopUp(!showPopUp);
+				console.log("Pressed R");
+			}
+		};
+
+		document.addEventListener("keydown", handleKeyPress);
+
+		return () => {
+			document.removeEventListener("keydown", handleKeyPress);
+		};
+	}, [showDelete, showPopUp]);
 
 	useEffect(() => {
 		const fetchMail = async () => {
