@@ -82,6 +82,10 @@ function RightSection() {
 							/>
 						</div>
 						<div className="ml-10 space-y-2 text-black dark:text-white">
+							<div>Step 3: Email</div>
+							<div className="text-[#B9B9B9] text-sm flex items-center">
+								<IoMailOpen className="mr-2 text-yellow-500" /> Open 27th, Aug
+							</div>
 						</div>
 					</div>
 				</div>
