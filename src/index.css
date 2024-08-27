@@ -1,27 +1,59 @@
+/* index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-	--bg-color: #ffffff;
-	--text-color: #000000;
+  --bg-color: #ffffff;
+  --text-color: #000000;
 }
 
 html.dark {
-	--bg-color: #1f1f1f;
-	--text-color: #ffffff;
+  --bg-color: #1f1f1f;
+  --text-color: #ffffff;
 }
 
 body {
-	background-color: var(--bg-color);
-	color: var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, sans-serif;
 }
 
 .no-scrollbar::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 .no-scrollbar {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 12rem; /* Adjust sidebar width */
+  }
+
+  .main-content {
+    padding: 1rem; /* Adjust padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width sidebar */
+  }
+
+  .topbar {
+    flex-direction: column;
+  }
+
+  .topbar .theme-toggle {
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    padding: 0.5rem; /* Adjust padding */
+  }
 }

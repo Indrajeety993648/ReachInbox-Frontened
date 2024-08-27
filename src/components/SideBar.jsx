@@ -4,7 +4,7 @@ import { IoIosSend } from "react-icons/io";
 import { SiElasticstack } from "react-icons/si";
 import { FaInbox } from "react-icons/fa";
 import { IoStatsChartSharp } from "react-icons/io5";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 
 function SideBar({ onMenuItemClick }) {
     const [selectedItem, setSelectedItem] = useState("/");
